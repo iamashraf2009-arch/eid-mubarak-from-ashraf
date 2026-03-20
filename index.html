@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Enter Your Name</title>
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  background: #0f2027;
+  color: white;
+}
+
+.box {
+  text-align: center;
+}
+
+input {
+  padding: 12px;
+  border-radius: 20px;
+  border: none;
+  width: 250px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  background: gold;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Enter Your Name</h2>
+  <input type="text" id="name" placeholder="Your name">
+  <br>
+  <button onclick="goNext()">Continue</button>
+</div>
+
+<script>
+function goNext() {
+  let name = document.getElementById("name").value;
+  if(name.trim() !== "") {
+    window.location.href = "greeting.html?name=" + encodeURIComponent(name);
+  }
+}
+</script>
+
+</body>
+</html>
